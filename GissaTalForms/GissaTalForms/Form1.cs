@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GissaTalForms
 {
-    public partial class Form1 : Form
+    public partial class guessButton : Form
     {
-        public Form1()
+        public guessButton()
         {
             InitializeComponent();
         }
