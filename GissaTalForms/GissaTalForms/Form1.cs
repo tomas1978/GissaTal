@@ -25,26 +25,34 @@ namespace GissaTalForms
 
         private void GuessButton_Click(object sender, EventArgs e)
         {
-            int guess = int.Parse(guessInput.Text);
-            numberOfGuesses++;
-            guessCounterLabel.Text = numberOfGuesses.ToString();
-            if(guess<randomNumber)
+            try
             {
-                guessMessage.Text = "Ditt tal är för lågt!";
-            }
-            else if(guess>randomNumber)
-            {
-                guessMessage.Text = "Ditt tal är för högt!";
-            }
-            else
-            {
-                guessMessage.Text = "Bra jobbat! Du gissade rätt!";
-                if(numberOfGuesses<bestResult)
+                int guess = int.Parse(guessInput.Text);
+
+                numberOfGuesses++;
+                guessCounterLabel.Text = numberOfGuesses.ToString();
+                if (guess < randomNumber)
                 {
-                    bestCounter.Text = numberOfGuesses.ToString();
-                    bestResult = numberOfGuesses;
+                    guessMessage.Text = "Ditt tal är för lågt!";
                 }
-                guessButton.Enabled = false;
+                else if (guess > randomNumber)
+                {
+                    guessMessage.Text = "Ditt tal är för högt!";
+                }
+                else
+                {
+                    guessMessage.Text = "Bra jobbat! Du gissade rätt!";
+                    if (numberOfGuesses < bestResult)
+                    {
+                        bestCounter.Text = numberOfGuesses.ToString();
+                        bestResult = numberOfGuesses;
+                    }
+                    guessButton.Enabled = false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Felaktig inmatning");
             }
         }
 
