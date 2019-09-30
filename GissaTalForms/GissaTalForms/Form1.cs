@@ -10,12 +10,22 @@ using System.Windows.Forms;
 
 namespace GissaTalForms
 {
-    public partial class guessButton : Form
+    public partial class guessNumber : Form
     {
-        public guessButton()
+        int numberOfGuesses = 0;
+        Random random = new Random();
+        int randomNumber;
+        public guessNumber()
         {
+            randomNumber = random.Next(1, 101);
             InitializeComponent();
         }
 
+        private void GuessButton_Click(object sender, EventArgs e)
+        {
+            int guess = int.Parse(guessInput.Text);
+            numberOfGuesses++;
+            guessCounterLabel.Text = numberOfGuesses.ToString();
+        }
     }
 }
