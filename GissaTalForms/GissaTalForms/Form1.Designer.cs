@@ -59,6 +59,7 @@
             this.resetButton.TabIndex = 1;
             this.resetButton.Text = "Nollställ";
             this.resetButton.UseVisualStyleBackColor = false;
+            this.resetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
             // guessesLabel
             // 

@@ -37,7 +37,18 @@ namespace GissaTalForms
             else
             {
                 guessMessage.Text = "Bra jobbat! Du gissade rätt!";
+                guessButton.Enabled = false;
             }
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            randomNumber = random.Next(1, 101);
+            numberOfGuesses = 0;
+            guessCounterLabel.Text = "0";
+            guessMessage.Text = "Du har inte gissat ännu";
+            guessInput.Text = "0";
+            guessButton.Enabled = true;
         }
     }
 }
