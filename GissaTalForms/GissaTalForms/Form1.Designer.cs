@@ -97,6 +97,7 @@
             this.guessInput.Name = "guessInput";
             this.guessInput.Size = new System.Drawing.Size(61, 26);
             this.guessInput.TabIndex = 5;
+            this.guessInput.Text = "0";
             // 
             // guessMessage
             // 

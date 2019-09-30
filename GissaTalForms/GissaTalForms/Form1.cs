@@ -26,6 +26,18 @@ namespace GissaTalForms
             int guess = int.Parse(guessInput.Text);
             numberOfGuesses++;
             guessCounterLabel.Text = numberOfGuesses.ToString();
+            if(guess<randomNumber)
+            {
+                guessMessage.Text = "Ditt tal är för lågt!";
+            }
+            else if(guess>randomNumber)
+            {
+                guessMessage.Text = "Ditt tal är för högt!";
+            }
+            else
+            {
+                guessMessage.Text = "Bra jobbat! Du gissade rätt!";
+            }
         }
     }
 }
