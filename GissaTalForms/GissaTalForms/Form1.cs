@@ -15,9 +15,11 @@ namespace GissaTalForms
         int numberOfGuesses = 0;
         Random random = new Random();
         int randomNumber;
+        int bestResult;
         public guessNumber()
         {
             randomNumber = random.Next(1, 101);
+            bestResult = int.MaxValue;
             InitializeComponent();
         }
 
@@ -37,6 +39,11 @@ namespace GissaTalForms
             else
             {
                 guessMessage.Text = "Bra jobbat! Du gissade rätt!";
+                if(numberOfGuesses<bestResult)
+                {
+                    bestCounter.Text = numberOfGuesses.ToString();
+                    bestResult = numberOfGuesses;
+                }
                 guessButton.Enabled = false;
             }
         }
