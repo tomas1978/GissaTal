@@ -35,6 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guessInput = new System.Windows.Forms.TextBox();
             this.guessMessage = new System.Windows.Forms.Label();
+            this.bestLabel = new System.Windows.Forms.Label();
+            this.bestConter = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // guessButton
@@ -65,7 +67,7 @@
             // 
             this.guessesLabel.AutoSize = true;
             this.guessesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guessesLabel.Location = new System.Drawing.Point(12, 23);
+            this.guessesLabel.Location = new System.Drawing.Point(12, 37);
             this.guessesLabel.Name = "guessesLabel";
             this.guessesLabel.Size = new System.Drawing.Size(126, 20);
             this.guessesLabel.TabIndex = 2;
@@ -75,7 +77,7 @@
             // 
             this.guessCounterLabel.AutoSize = true;
             this.guessCounterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guessCounterLabel.Location = new System.Drawing.Point(161, 23);
+            this.guessCounterLabel.Location = new System.Drawing.Point(155, 37);
             this.guessCounterLabel.Name = "guessCounterLabel";
             this.guessCounterLabel.Size = new System.Drawing.Size(18, 20);
             this.guessCounterLabel.TabIndex = 3;
@@ -110,11 +112,33 @@
             this.guessMessage.TabIndex = 6;
             this.guessMessage.Text = "Du har inte gissat ännu";
             // 
+            // bestLabel
+            // 
+            this.bestLabel.AutoSize = true;
+            this.bestLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bestLabel.Location = new System.Drawing.Point(13, 4);
+            this.bestLabel.Name = "bestLabel";
+            this.bestLabel.Size = new System.Drawing.Size(103, 20);
+            this.bestLabel.TabIndex = 7;
+            this.bestLabel.Text = "Bäst resultat:";
+            // 
+            // bestConter
+            // 
+            this.bestConter.AutoSize = true;
+            this.bestConter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bestConter.Location = new System.Drawing.Point(155, 4);
+            this.bestConter.Name = "bestConter";
+            this.bestConter.Size = new System.Drawing.Size(35, 20);
+            this.bestConter.TabIndex = 8;
+            this.bestConter.Text = "N/A";
+            // 
             // guessNumber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(219, 328);
+            this.Controls.Add(this.bestConter);
+            this.Controls.Add(this.bestLabel);
             this.Controls.Add(this.guessMessage);
             this.Controls.Add(this.guessInput);
             this.Controls.Add(this.label2);
@@ -138,6 +162,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox guessInput;
         private System.Windows.Forms.Label guessMessage;
+        private System.Windows.Forms.Label bestLabel;
+        private System.Windows.Forms.Label bestConter;
     }
 }
 
